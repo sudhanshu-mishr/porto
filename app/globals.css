@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config "../tailwind.config.ts";
+
+@theme {
+  --color-border: hsl(240, 5%, 84%);
+  --color-input: hsl(240, 5%, 84%);
+  --color-background: hsl(42, 20%, 97%);
+  --color-foreground: hsl(240, 10%, 8%);
+  --color-muted: hsl(42, 12%, 92%);
+  --color-muted-foreground: hsl(240, 6%, 40%);
+}
 
 :root {
   color-scheme: light;
