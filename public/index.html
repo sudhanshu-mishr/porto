@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PresetFolio</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">PresetFolio</div>
+    <a href="#browser">Presets</a>
+    <a href="#donate">Donate</a>
+    <button class="btn" onclick="document.getElementById('browser').scrollIntoView({behavior:'smooth'})">Start</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Your portfolio in 3 clicks.</h1>
+      <p>Choose a preset, personalize details, export as an AI prompt or deploy.</p>
+    </section>
+
+    <section id="browser" class="card">
+      <h2>Browse Presets</h2>
+      <div id="presetGrid" class="grid"></div>
+    </section>
+
+    <section class="card app">
+      <h2>Finalize Setup</h2>
+      <div class="split">
+        <form id="setupForm" class="form">
+          <input type="hidden" name="preset" id="presetInput" value="minimal-editorial" />
+          <label>Name<input name="name" required placeholder="Alex Rivera" /></label>
+          <label>Title<input name="title" placeholder="Product Designer & Front-End Dev" /></label>
+          <label>Bio<textarea name="bio" rows="4" placeholder="Short professional summary"></textarea></label>
+          <label>Links<input name="links" placeholder="github.com/... , linkedin.com/..." /></label>
+          <label>Resume (PDF)<input type="file" name="resume" accept=".pdf" /></label>
+          <label>Portfolio (PDF)<input type="file" name="portfolio" accept=".pdf" /></label>
+          <div class="actions">
+            <button class="btn" type="submit">Copy AI Prompt</button>
+            <button class="btn ghost" id="deployBtn" type="button">Deploy</button>
+          </div>
+        </form>
+        <div class="preview card-lite">
+          <h3>Live Preview</h3>
+          <div id="previewName">Your Name</div>
+          <div id="previewTitle">Your Title</div>
+          <p id="previewBio">Your bio appears here.</p>
+          <small id="previewPreset">Preset: minimal-editorial</small>
+          <pre id="promptOutput" class="prompt"></pre>
+          <div id="deployOutput" class="deploy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="donate" class="card donate">
+      <h2>Support PresetFolio</h2>
+      <p>Donations help us keep premium presets free for everyone.</p>
+      <a class="btn" href="https://buymeacoffee.com" target="_blank" rel="noreferrer">Donate</a>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
